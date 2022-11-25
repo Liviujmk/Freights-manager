@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("layouts/HtmlHead") %> 
+</head>
+<body>
+    <h1>COMANDA <%= record.commandNr %></h1>
+    <br>
+    <h3>Command date: <%= record.commandDate %></h3>
+    <br>
+    <h3>Credit note number: <%= record.creditNoteNr %></h3>
+    <br>
+    <h3>Credit note date: <%= record.creditNoteDate %></h3>
+    <br>
+    <h3>Loadings</h3>
+    <% record.loadings.forEach(loading => { %>
+        <h5> <%= loading.loadCompany %> </h5>
+        <h5> <%= loading.loadAddress %> </h5>
+    <% }) %> 
+    <br>
+    <br>
+    <br>
+    <h3>Unoadings</h3>
+    <% record.unloadings.forEach(unloading => { %>
+        <h5> <%= unloading.unloadCompany %> </h5>
+        <h5> <%= unloading.unloadAddress %> </h5>
+    <% }) %> 
+    <br>
+    <br>
+    <br>
+    <h3>Command payment status: <%= record.paymentStatus %></h3>
+    <br>
+    <h3>Command LENGTH: <%= record.km %></h3>
+    <br>
+    <h3>Command PRICE: <%= record.price %></h3> 
+    <br>
+    <br>
+    <form action="/companies/<%= company.id %>/trucks/<%= truck.number %>/records/<%= record.commandNr %>/delete" method="post">
+        <button type="submit">Delete this record</button>
+    </form>
+</body>
+</html>

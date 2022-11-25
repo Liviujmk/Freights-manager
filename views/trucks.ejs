@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("layouts/HtmlHead") %> 
+</head>
+<body>
+    <h1>Your company</h1>
+    <br>
+    <br>
+    <h2>Name: <%= company.name %></h2>
+    <h2>Address: <%= company.address %></h2>
+    <h2>City: <%= company.city %></h2>
+    <h2>Phone: <%= company.phone %></h2>
+    <h2>Email: <%= company.email %></h2>
+    <h2>Trucks:
+        <% company.trucks.forEach(truck => { %>
+            <a href="/trucks/<%= truck.number %>"><%= truck.name %></a>
+            <br>
+            <br>
+        <% }) %>
+    </h2>
+    <br>
+    <a href="/companies/<%= company.id %>/records">See all records from this company</a>
+</body>
+</html>

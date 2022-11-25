@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("layouts/HtmlHead") %> 
+</head>
+<body>
+    <main>
+        <h2>Name: <%= company.name %></h2>
+        <h2>Trucks:</h2>
+        <section>
+            <% company.trucks.forEach(truck => { %>
+                <article>
+                    <a href="/companies/<%= company._id %>/trucks/<%= truck.number %>"><%= truck.number %></a>
+                </article>
+            <% }) %>
+        </section>
+        <a href="/companies/<%= company.id %>/createTruck" class="link">
+            <button class="bn54">
+                <span class="bn54span">ADD TRUCK</span>
+            </button>
+        </a>
+    </main>
+</body>
+</html>

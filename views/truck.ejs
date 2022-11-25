@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("layouts/HtmlHead") %> 
+</head>
+<body>
+    <main>
+        <h3>Truck Number: <%= truck.number %></h3>
+        <form method="POST" class="onlyBtn" action="/companies/<%= company.id %>/trucks/<%= truck.number %>/delete">
+            <button type="submit" class="main-btn">Delete truck</button>
+        </form>
+        <table>
+            <caption>Truck Number: <%= truck.number %></caption>
+            <thead>
+                <tr>
+                    <th scope="col">CommandNr</th>
+                    <th scope="col">CommandDate</th>
+                    <th scope="col">creditNoteNr</th>
+                    <th scope="col">CreditNoteDate</th>
+                    <th scope="col">Loading Company</th>
+                    <th scope="col">Loading Adress</th>
+                    <th scope="col">Unloading Company</th>
+                    <th scope="col">Unloading Adress</th>
+                    <th scope="col">KM</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Payment</th>
+                    <th scope="col" class="actionsRecord">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% truck.records.forEach(record => { %>
+                    <tr id="row2" class="row">
+                        <% if(record.commandLink) { %> 
+                            <td data-label="CommandNr">
+                                    <a href="<%=record.commandLink%>"><%=record.commandNr%></a>
+                            </td>
+                            <% } else { %>
+                            <td data-label="CommandNr" class="notLink"><%=record.commandNr%></td>
+                        <% } %>
+                        <td data-label="Command Date"><%=record.commandDate%></td>
+                        <% if(record.creditNoteLink) { %> 
+                            <td data-label="CommandNr">
+                                    <a href="<%=record.creditNoteLink%>"><%=record.creditNoteNr%></a>
+                            </td>
+                            <% } else { %>
+                            <td data-label="CreditNoteNR" class="notLink"><%=record.creditNoteNr%></td>
+                        <% } %>
+                        <td data-label="CreditNoteDate"><%=record.creditNoteDate%></td>
+                        <td data-label="Loading Company" class="lc">
+                            <% record.loadings.forEach(l => { %>
+                                <span><%=l.loadCompany%></span>
+                            <% }) %>  
+                        </td>
+                        <td data-label="Loading Adress" class="la">
+                            <% record.loadings.forEach(l => { %>
+                                <span><%=l.loadAddress%></span>
+                            <% }) %>     
+                        </td>
+                        <td data-label="Unloading Company" class="lb">
+                            <% record.unloadings.forEach(u => { %>
+                                <span><%=u.unloadCompany%></span>
+                            <% }) %>
+                        </td>
+                        <td data-label="Unloading Adress" class="ld">
+                            <% record.unloadings.forEach(u => { %>
+                                <span><%=u.unloadAddress%></span>
+                            <% }) %>
+                        </td>
+                        <td data-label="KM"><%=record.km%></td>
+                        <td data-label="Price">&euro; <%=record.price%></td>
+                        <% if(record.paymentStatus==='paid' || record.paymentStatus==='Paid' || record.paymentStatus==='yes' || record.paymentStatus==='Yes') { %>
+                            <td data-label="Payment"><span><%=record.paymentStatus%></span></td>
+                        <% } else { %>
+                            <td data-label="Payment" class="notLink"><span><%=record.paymentStatus%></span></td>
+                        <% } %>
+                        <td data-label="Actions" class="actionsRecord">
+                            <form class="del" action="/companies/<%= company.id %>/trucks/<%= truck.number %>/records/<%= encodeURIComponent(record.commandNr) %>/delete" method="post">
+                                <a title="Edit record" href="/companies/<%= company.id %>/trucks/<%= truck.number %>/records/<%= encodeURIComponent(record.commandNr) %>/edit" class="edit"><ion-icon name="construct-outline"></ion-icon></a>
+                                <a title="See CMR" href="<%=record.cmrLink%>" class="cmr"><ion-icon name="document-text-outline"></ion-icon></a>
+                                <button title="Delete record" type="submit" value="Delete" class="delete" name="<%= encodeURIComponent(record.commandNr) %>">
+                                    <ion-icon name="trash-outline"></ion-icon>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+                    <tr class="total-amount">
+                        <td colspan="8">Total Amount and Kilometers</td>
+                        <td><%= totalKm %> km</td>
+                        <td>&euro; <%= totalAmount %></td>
+                        <td colspan="1"></td>
+                        <td colspan="1" class="actionsRecord"></td>
+                    </tr>
+            </tbody>
+        </table>
+        <a class="link" href="/companies/<%= company.id %>/trucks/<%= truck.number %>/createRecord">
+            <button class="bn54">
+                <span class="bn54span">ADD RECORD</span>
+            </button>
+        </a>
+    </main>
+</body>
+</html>

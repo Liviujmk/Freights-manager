@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("layouts/HtmlHead") %> 
+</head>
+<body class="rf">
+    <main class="recmain">
+        <h1>Edit record <b><%= record.commandNr %> </b></h1>
+        <div class="grup">
+            <button id="addLoad">Add loading</button>
+            <button id="addUnload">Add unloading</button>
+        </div>
+        <div class="grup">
+            <button id="removeLoad">Remove loading</button>
+            <button id="removeUnload">Remove unloading</button>
+        </div>
+        <form action="/companies/<%= company.id %>/trucks/<%= truck.number %>/records" method="POST" class="formTabel">
+            <input type="text" name="commandNr" placeholder="Command Nr." required value="<%= record.commandNr %>"/>
+            <input type="text" name="commandLink" placeholder="Command link" value="<%= record.commandLink %>">
+            <input type="date" name="commandDate" placeholder="CommandDate" value="<%= record.commandDate %>"/>
+            <input type="text" name="creditNoteNr" placeholder="creditNoteNr" value="<%= record.creditNoteNr %>"/>
+            <input type="text" name="creditNoteLink" placeholder="CreditNote link" value="<%= record.creditNoteLink %>">
+            <input type="date" name="creditNoteDate" placeholder="creditNoteDate" value="<%= record.creditNoteDate %>"/>
+            <div class="loadings" data-loadings="">
+                <input type="hidden" id="loadingsNr" name="loadingsNr" value="<%= record.loadings.length %>"/>
+                <% record.loadings.forEach(load => { %>
+                    <div class="load">
+                        <input type="text" name="loadCompany" placeholder="Loading Place" value="<%= load.loadCompany %>"/>
+                        <input type="text" name="loadAddress" placeholder="Loading Place" value="<%= load.loadAddress %>"/>
+                    </div>
+                <% }) %>
+            </div>
+            <div class="unloadings" data-unloadings="">
+                <input type="hidden" id="unloadingsNr" name="unloadingsNr" value="<%= record.unloadings.length %>"/>
+                <% record.unloadings.forEach(unload => { %>
+                    <div class="unload">
+                        <input type="text" name="unloadCompany" placeholder="Unloading place" value="<%= unload.unloadCompany %>"/>
+                        <input type="text" name="unloadAddress" placeholder="Unloading place" value="<%= unload.unloadAddress %>"/>
+                    </div>
+                <% }) %>
+            </div>
+            <input type="text" name="cmrLink" placeholder="CMR link" value="<%= record.cmrLink %>">
+            <input type="text" name="paymentStatus" id="payment" placeholder="Payment status" required value="<%= record.paymentStatus %>"/>
+            <input type="number" name="km" placeholder="Enter km" value="<%= record.km %>"/>
+            <input type="number" name="price" placeholder="Enter price" step="any" value="<%= record.price %>"/>
+            <br>
+            <input type="submit" id="submit" value="Edit Record"/>
+        </form>
+    </main>
+</body>
+</html>

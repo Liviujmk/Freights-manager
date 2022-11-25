@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("layouts/HtmlHead") %> 
+</head>
+<body class="mf">
+    <main>
+        <form action="/companies" method="POST" required class="login-form">
+            <h1>Create company</h1>
+            <div class="form-input-material">
+                <input type="text" name="name" id="username" placeholder="Company Name" autocomplete="off"
+                        class="form-control-material" required />
+            </div>
+            <input type="submit" class="btn btn-primary btn-ghost" value="Add company">
+        </form>
+    </main>
+</body>
+</html>

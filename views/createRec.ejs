@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("layouts/HtmlHead") %> 
+</head>
+<body class="rf">
+    <main class="recmain">
+        <h1>Create record</h1>
+        <div class="grup">
+            <button id="addLoad">Add loading</button>
+            <button id="addUnload">Add unloading</button>
+        </div>
+        <div class="grup">
+            <button id="removeLoad">Remove loading</button>
+            <button id="removeUnload">Remove unloading</button>
+        </div>
+        <form action="/companies/<%= company.id %>/trucks/<%= truck.number %>/records" method="POST" class="formTabel">
+            <input type="text" name="commandNr" placeholder="Command Nr." required>
+            <input type="text" name="commandLink" placeholder="Command link">
+            <input type="date" name="commandDate" placeholder="CommandDate">
+            <input type="text" name="creditNoteNr" placeholder="creditNoteNr">
+            <input type="text" name="creditNoteLink" placeholder="Credit note link">
+            <input type="date" name="creditNoteDate" placeholder="creditNoteDate">
+            <div class="loadings" data-loadings="">
+                <input type="hidden" id="loadingsNr" name="loadingsNr" value="1">
+                <div class="load">
+                    <input type="text" name="loadCompany" placeholder="Loading Place 1">
+                    <input type="text" name="loadAddress" placeholder="Loading Adress 1">
+                </div>
+            </div>
+            <div class="unloadings" data-unloadings="">
+                <input type="hidden" id="unloadingsNr" name="unloadingsNr" value="1">
+                <div class="unload">
+                    <input type="text" name="unloadCompany" placeholder="Unloading place 1">
+                    <input type="text" name="unloadAddress" placeholder="Unloading address 1">
+                </div>
+            </div>
+            <input type="text" name="cmrLink" placeholder="CMR link">
+            <input type="text" name="paymentStatus" id="payment" placeholder="Payment status" required />
+            <input type="number" name="km" placeholder="Enter km">
+            <input type="number" name="price" placeholder="Enter price" step="any">
+            <br>
+            <input type="submit" id="submit" value="Create Record">
+        </form>
+    </main>
+</body>
+</html>
