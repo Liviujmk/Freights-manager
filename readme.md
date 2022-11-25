@@ -4,6 +4,10 @@
 
 [https://freight-logistics.herokuapp.com/](https://freight-logistics.herokuapp.com/)
 
+
+## I built this project in collaboration with my brother [Cătălin Mitrofan](https://github.com/Mitrogun)
+
+
 ## This project is built with the following technologies:
 
 - [Node.js](https://nodejs.org/en/)
