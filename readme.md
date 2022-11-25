@@ -7,8 +7,11 @@
 
 ## I built this project in collaboration with my brother [Cătălin Mitrofan](https://github.com/Mitrogun)
 
+- I have designed and built the backend of application, did small improvements on the frontend and also did the deployment on Heroku.
+- Catalin has designed and built the frontend of application
 
-## This project is built with the following technologies:
+
+## This is a Full-Stack project built with the following technologies:
 
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
@@ -25,6 +28,7 @@
 ## What does this project do?
 
 - This project is a freight logistics management system.
-- It allows users to create, read, update and delete freight orders.
-- It allows users to create, read, update and delete vehicles for every company that is registered.
-- It allows users to create, read, update and delete all orders' details.
+- It allows me to create, read, update and delete freight orders.
+- It allows me to create companies to manage
+- It allows me to create, read, update and delete vehicles for every company that is registered.
+- It allows me to create, read, update and delete all orders' details.
