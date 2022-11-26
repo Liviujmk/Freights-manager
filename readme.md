@@ -4,8 +4,7 @@
 
 ### See it live now! Click the link down below!
 
-**[https://freight-logistics.herokuapp.com/]**(https://freight-logistics.herokuapp.com/)
-
+[https://freight-logistics.herokuapp.com/]
 
 ### I built this project in collaboration with my brother [Cătălin Mitrofan](https://github.com/Mitrogun)
 
