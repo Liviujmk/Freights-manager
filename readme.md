@@ -1,10 +1,10 @@
 # This is a project about managing freight logistics.
 
-## I also used this project to build custom web apps for the followings logistics companies: **Trans SVM, SMG Brothers Invest and Solo Spedition** 
+## I also used this project to build custom web apps for the followings logistics companies: __Trans SVM, SMG Brothers Invest and Solo Spedition__
 
 ### See it live now! Click the link down below!
 
-[https://freight-logistics.herokuapp.com/](https://freight-logistics.herokuapp.com/)
+**[https://freight-logistics.herokuapp.com/]**(https://freight-logistics.herokuapp.com/)
 
 
 ### I built this project in collaboration with my brother [Cătălin Mitrofan](https://github.com/Mitrogun)
