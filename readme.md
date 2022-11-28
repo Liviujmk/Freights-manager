@@ -9,7 +9,7 @@
 ### I built this project in collaboration with my brother [Cătălin Mitrofan](https://github.com/Mitrogun)
 
 
-- I have designed and built the backend of application, did small improvements on the frontend and also did the deployment on Heroku.
+- I have designed and built the backend of the application, did small improvements on the frontend and also did the deployment on Heroku.
 - Catalin has designed and built the frontend of application
 
 
