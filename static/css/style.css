@@ -9,6 +9,7 @@ body {
     background: #ffffff;
     position: relative;
 }
+
 main {
     text-align: center;
 }
@@ -19,14 +20,15 @@ main.recmain {
     margin-right: auto;
 }
 
-body.mf{
+body.mf {
     font-family: 'Raleway', sans-serif;
     display: grid;
     place-items: center;
     min-height: 100vh;
     background: #3a7ca5;
 }
-body.rf{
+
+body.rf {
     display: block;
     font-family: 'Raleway', sans-serif;
     text-align: center;
@@ -84,7 +86,9 @@ form.onlyBtn {
 .formTabel input {
     width: auto;
 }
-.load, .unload {
+
+.load,
+.unload {
     display: flex;
     justify-content: space-between;
 }
@@ -111,9 +115,11 @@ input:not(#submit):focus {
 div input {
     margin: 1px;
 }
+
 button {
     cursor: pointer;
 }
+
 button.main-btn {
     border-radius: 4px;
     background-color: #fff;
@@ -129,7 +135,8 @@ button.main-btn:hover {
     color: #fff;
 }
 
-button.main-btn:active, button.main-btn:focus {
+button.main-btn:active,
+button.main-btn:focus {
     background-color: #9a0000;
     color: #fff;
 }
@@ -152,7 +159,7 @@ button.main-btn:active, button.main-btn:focus {
 
 section {
     display: flex;
-    flex-wrap: wrap ;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 5em;
@@ -436,6 +443,7 @@ tr.total-amount {
     table td:last-child {
         border-bottom: 0;
     }
+
     form.onlyBtn {
         top: unset;
         bottom: -50px;
@@ -451,13 +459,13 @@ form.del {
     gap: 4.5px;
 }
 
-@media screen and (min-width: 1320px ) {
+@media screen and (min-width: 1320px) {
     form.del {
         flex-direction: row;
     }
 }
 
-@media screen and (max-width: 600px ) {
+@media screen and (max-width: 600px) {
     form.del {
         flex-direction: row;
     }
@@ -479,7 +487,8 @@ form.del {
     color: rgb(255, 255, 255);
 }
 
-.delete:active, .delete:focus {
+.delete:active,
+.delete:focus {
     background-color: #6f1111;
     color: rgb(255, 255, 255);
 }
@@ -495,12 +504,14 @@ form.del {
     font-weight: 500;
     background-color: #fff;
 }
+
 .edit:hover {
     background-color: #0b8906;
     color: rgb(255, 255, 255);
 }
 
-.edit:active, .edit:focus {
+.edit:active,
+.edit:focus {
     background-color: #0d5212;
     color: rgb(255, 255, 255);
 }
@@ -516,12 +527,14 @@ form.del {
     font-weight: 500;
     background-color: #fff;
 }
+
 .cmr:hover {
     background-color: #050c6b;
     color: rgb(255, 255, 255);
 }
 
-.cmr:active, .cmr:focus {
+.cmr:active,
+.cmr:focus {
     background-color: #09154e;
     color: rgb(255, 255, 255);
 }
@@ -529,25 +542,91 @@ form.del {
 /* print styles */
 
 @media print {
-    body td, body th {
+
+    body td,
+    body th {
         color: #000 !important;
     }
+
     th {
         border: none !important;
     }
+
     .actionsRecord {
         display: none;
     }
+
     a.link {
         display: none;
     }
+
     table caption {
         display: none;
     }
+
     form {
         display: none;
     }
+
     button {
         display: none;
+    }
+}
+
+.index-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4.5px;
+    width: 350px;
+    height: 4rem;
+    margin: 1rem auto;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 3px solid#003249;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    color: #003249;
+    font-size: large;
+    font-weight: 600;
+}
+
+.button-section {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.create-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4.5px;
+    width: 350px;
+    height: 4rem;
+    margin: 1rem auto;
+    border-radius: 10px;
+    background-color: #003249;
+    border: 2px solid #003249;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    color: #fff;
+    font-size: large;
+    font-weight: 500;
+}
+
+.create-button:hover {
+    scale: 1.1;
+}
+
+.index-button:hover {
+    scale: 1.1;
+}
+
+@media screen and (max-width: 860px) {
+    .button-section {
+        flex-direction: column;
+
     }
 }

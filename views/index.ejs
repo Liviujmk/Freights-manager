@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <%- include("layouts/HtmlHead") %> 
+    <%- include("layouts/HtmlHead") %>
 </head>
+
 <body>
     <main>
-        <h1>Hi Liviu! Here is a simple dashboard for your companies</h1>
+        <br>
+        <h1>Hi! Here is a simple dashboard for your companies</h1>
         <br>
         <br>
-        <a href="companies">Go to companies</a>
-        <br>
-        <br>
-        <a href="/companies/new">Create new company</a>
+        <div class="button-section">
+
+            <button class="index-button" onclick=window.location.href="companies">
+                <!-- <a class="link" href="companies">Go to companies</a> -->
+                Go to companies
+            </button>
+
+            <button class="create-button" onclick=window.location.href="/companies/new">
+                <!-- <a class="link-create" href="/companies/new">Create new company</a> -->
+                Create new company
+            </button>
+        </div>
     </main>
 </body>
+
 </html>
