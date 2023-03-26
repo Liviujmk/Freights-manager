@@ -25,7 +25,7 @@ body.mf {
     display: grid;
     place-items: center;
     min-height: 100vh;
-    background: #3a7ca5;
+    background: #003249;
 }
 
 body.rf {
@@ -171,7 +171,7 @@ article {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #3a7ca5;
+    background-color: #003249;
     margin: 1em;
     border-radius: 15px;
     transition: transform 1s;
@@ -594,8 +594,8 @@ form.del {
 .button-section {
     margin-top: 5rem;
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    flex-direction: column;
 }
 
 .create-button {
@@ -627,6 +627,21 @@ form.del {
 @media screen and (max-width: 860px) {
     .button-section {
         flex-direction: column;
-
     }
+}
+
+.record-button {
+    background-color: #216de7c1;
+    border: none;
+    color: #fff;
+    width: 180px;
+    margin: 0 auto;
+    height: 2.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+
+}
+
+.record-button:hover {
+    background-color: #216de7;
 }
